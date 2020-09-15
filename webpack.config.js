@@ -2,18 +2,25 @@ const webpack = require('webpack');
 const path = require('path');
 const LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
+const DIST_DIR = path.resolve(__dirname, "public");
+const SRC_DIR = path.resolve(__dirname, "src");
+
 const config = {
-  entry: './src/index.js',
+  entry: `${SRC_DIR}/index.js`,
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: DIST_DIR,
     filename: 'bundle.js'
   },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
-        use: 'babel-loader',
-        exclude: /node_modules/
+        test:  /\.jsx?/,
+        include: SRC_DIR,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        query: {
+          presets: ["@babel/preset-react", "@babel/preset-env"],
+        },
       },
       {
         test: /\.css$/,
@@ -22,12 +29,6 @@ const config = {
           'css-loader'
         ]
       }
-    ]
-  },
-  resolve: {
-    extensions: [
-      '.js',
-      '.jsx'
     ]
   },
   plugins: [
