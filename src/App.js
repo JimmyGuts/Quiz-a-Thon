@@ -41,7 +41,7 @@ class App extends React.Component {
   componentDidMount() {
     axios({
       method: 'get',
-      url: '/questions',
+      url: '/questions/all/any',
     })
       .then((data) => {
         this.setState({
@@ -50,6 +50,7 @@ class App extends React.Component {
           correct: data.data.results[this.state.currentQNum].correct_answer,
           incorrects: data.data.results[this.state.currentQNum].incorrect_answers,
           loading: false,
+          points: 100,
         })
       })
       .catch((err) => {
@@ -58,13 +59,12 @@ class App extends React.Component {
   }
 
   gameOn() {
-
     setTimeout(() => {
       this.scoreBar();
     }, 1500)
     axios({
       method: 'get',
-      url: `/questions/:${this.state.category}/:${this.state.difficulty}`
+      url: `/questions/${this.state.category}/${this.state.difficulty}`
     })
       .then((data) => {
         this.setState({
@@ -73,6 +73,7 @@ class App extends React.Component {
           correct: data.data.results[this.state.currentQNum].correct_answer,
           incorrects: data.data.results[this.state.currentQNum].incorrect_answers,
           loading: false,
+          points: 100,
         })
       })
       .catch((err) => {
@@ -92,6 +93,9 @@ class App extends React.Component {
       incorrects: this.state.questions[this.state.currentQNum].incorrect_answers,
       answered: false,
     })
+    setTimeout(() => {
+      this.scoreBar();
+    }, 1500)
   }
 
   scoreBar() {
@@ -138,6 +142,7 @@ class App extends React.Component {
         answerDone: true,
         pointVal: this.state.points,
         score: this.state.score + this.state.points,
+        points: 0,
       })
     } else {
       this.setState({
@@ -145,6 +150,7 @@ class App extends React.Component {
         currentQNum: this.state.currentQNum + 1,
         answerDone: true,
         pointVal: 0,
+        points: 0,
       })
     }
   }
