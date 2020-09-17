@@ -182,7 +182,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <ButtonAppBar state={this.state} />
+        <ButtonAppBar state={this.state} playAgain={this.playAgain.bind(this)} />
         {this.state.gameOn
           ? <Grid container spacing={2} direction='column' style={{ display: 'flex', justifyContent: 'center' }}>
             <Grid item>

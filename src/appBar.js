@@ -27,7 +27,7 @@ function ButtonAppBar(props) {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton style={{ marginRight: '1px'}} edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+          <IconButton style={{ marginRight: '1px'}} edge="start" className={classes.menuButton} color="inherit" aria-label="menu" onClick={props.playAgain}>
             <HelpOutlineIcon style={{ marginRight: '1px'}} color='secondary' fontSize='large' />
           </IconButton>
           <Typography style={{ marginLeft: '1px' }} variant="h6" className={classes.title}>
