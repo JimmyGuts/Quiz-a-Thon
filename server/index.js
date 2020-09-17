@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const Port = 4040;
+const Port = process.env.PORT || 4040;
 const axios = require('axios');
 'use strict';
 
