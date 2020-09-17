@@ -12,7 +12,7 @@ app.use(express.static(__dirname + '/../public'))
 app.get('/questions', (rec, res) => {
   axios({
     method: 'get',
-    url: 'https://opentdb.com/api.php?amount=1&encode=base64',
+    url: 'https://opentdb.com/api.php?amount=10&encode=base64',
   })
     .then((data) => {
       res.send(data.data);
