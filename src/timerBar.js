@@ -32,6 +32,7 @@ const useStyles = makeStyles((theme) => ({
 function TimerBar(props) {
   const classes = useStyles();
 
+
   return (
     <Paper>
       <LinearProgress className={classes.cards} variant="determinate" color="secondary" value={props.state.points}></LinearProgress>

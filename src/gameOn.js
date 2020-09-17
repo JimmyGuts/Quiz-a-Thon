@@ -56,7 +56,7 @@ function GameGrid(props) {
 
   if (!props.state.oneAnswerFill) {
     fillAnswers();
-    // props.answersFilled();
+    props.answersFilled(answers);
   }
 
 
@@ -93,7 +93,7 @@ function GameGrid(props) {
           {/* <TimerBar state={props.state}/> */}
           <h6 style={{ margin: '0px' }}>Points: {props.state.points}</h6>
           <Grid container justify="center" spacing={2}>
-            {answers.map((answer, i) =>
+            {props.state.answers.map((answer, i) =>
               <Grid key={i} item>
                 <Button onClick={() => props.answerSelect(answer)} variant="contained" color="secondary" value={answer}>{answer}</Button>
               </Grid>
