@@ -1,6 +1,7 @@
 # quiz-a-thon
 
-Empty project.
+A simple quiz game that allows you to pick a category and a difficulty, and will score your answers based on speed.
+Work in progress, additional features and optimizations being added.
 
 ## Building and running on localhost
 
@@ -24,7 +25,18 @@ npm run build-dev
 
 ## Running
 
-Open the file `dist/index.html` in your browser
+To run in development mode:
+
+```sh
+npm run start-dev
+```
+
+To run in production mode:
+
+```sh
+npm run start
+```
+
 
 ## Credits
 
