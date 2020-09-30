@@ -45,7 +45,7 @@ function LetsPlay(props) {
   }
 
   return (
-    <Grid container justify='center' direction='row' spacing={1} style={{ margin: '8px' }}>
+    <Grid container xs={12} justify='center' direction='row' spacing={1} style={{ margin: '8px' }}>
       <Grid container justify='center' spacing={1} style={{ marginBottom: '8px' }}>
         <Card>
           <CardContent>

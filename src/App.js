@@ -146,7 +146,7 @@ class App extends React.Component {
       })
     } else {
       this.setState({
-        answer: 'Nope.',
+        answer: `Nope. It was "${(atob(this.state.currentQuestion.correct_answer))}."`,
         currentQNum: this.state.currentQNum + 1,
         answerDone: true,
         pointVal: 0,
@@ -184,7 +184,7 @@ class App extends React.Component {
       <div>
         <ButtonAppBar state={this.state} playAgain={this.playAgain.bind(this)} />
         {this.state.gameOn
-          ? <Grid container spacing={2} direction='column' style={{ display: 'flex', justifyContent: 'center' }}>
+          ? <Grid container xs={12} spacing={2} direction='column' style={{ display: 'flex', justifyContent: 'center' }}>
             <Grid item>
               <LetsPlay state={this.state} gameOn={this.gameOn.bind(this)} setCategory={this.setCategory.bind(this)} setDifficulty={this.setDifficulty.bind(this)} />
             </Grid>

@@ -10,7 +10,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false}));
 app.use(express.static(__dirname + '/../public'))
 
+
+
 const categories = ['All', 'General Knowledge', 'Entertainment: Books', 'Entertainment: Film', 'Entertainment: Music', 'Entertainment: Musicals & Theatres', 'Entertainment: Television', 'Entertainment: Video Games', 'Entertainment: Board Games', 'Science & Nature', 'Science: Computers', 'Science: Mathematics', 'Mythology',  'Sports', 'Geography', 'History', 'Politics', 'Art', 'Celebrities', 'Animals', 'Vehicles', 'Entertainment: Comics', 'Science: Gadgets', 'Entertainment: Anime', 'Entertainmet: Cartoons'];
+
+/// Initial Category and Difficulty Selector ///
 
 app.get('/questions/:category/:difficulty', (rec, res) => {
   let category = rec.params.category;
@@ -39,6 +43,8 @@ app.get('/questions/:category/:difficulty', (rec, res) => {
       console.log(err);
     })
 })
+
+/// High Scores DB Implementation ///
 
 app.listen(Port, () => {
   console.log('Server started on Port ' + Port)
