@@ -46,6 +46,15 @@ app.get('/questions/:category/:difficulty', (rec, res) => {
 
 /// High Scores DB Implementation ///
 
+/* Get Current Scores */
+  //Pull in the top 10 scores from DB
+
+/* Accept New HighScore Name */
+  //Add name, score, category, difficulty to DB
+
+/* Delete lowest of new high scores */
+  //Want to have a max of 10 items in DB
+
 app.listen(Port, () => {
   console.log('Server started on Port ' + Port)
 })

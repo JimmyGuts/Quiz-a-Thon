@@ -4,7 +4,9 @@ mongoose.connect('mongodb://localhost:27017/quiz', {useNewUrlParser: true, useUn
 
 const User = mongoose.model('User', {
   userName: { type: String, unique: true },
-  totalScore: Number
+  totalScore: Number,
+  category: String,
+  difficulty: String
 });
 
 module.exports = { User };
