@@ -3,7 +3,7 @@ mongoose.connect('mongodb://localhost:27017/quiz', {useNewUrlParser: true, useUn
 
 
 const User = mongoose.model('User', {
-  userName: { type: String, unique: true },
+  name: String,
   totalScore: Number,
   category: String,
   difficulty: String
