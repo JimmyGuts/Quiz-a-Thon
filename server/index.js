@@ -54,6 +54,8 @@ app.get('/questions/:category/:difficulty', (rec, res) => {
 
 /* Delete lowest of new high scores */
   //Want to have a max of 10 items in DB
+  //this could potentially be part of the above function
+  //Also something to think about- what happens if 10 perfect scores get logged? Then delete the least recent?
 
 app.listen(Port, () => {
   console.log('Server started on Port ' + Port)
