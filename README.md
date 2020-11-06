@@ -3,6 +3,8 @@
 A simple quiz game that allows you to pick a category and a difficulty, and will score your answers based on speed.
 Work in progress, additional features and optimizations being added.
 
+https://quiz-a-thon.herokuapp.com/
+
 ## Building and running on localhost
 
 First install dependencies:
